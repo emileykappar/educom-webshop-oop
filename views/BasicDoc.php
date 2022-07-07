@@ -8,13 +8,14 @@ class BasicDoc extends HtmlDoc {
         $this->data = $data;
     }
 
-    function showHeader() {
-        echo ' <h1> Welkom op mijn website! <br></h1>';     
+    protected function showHeader() {
+        echo ' <h1> Welkom op mijn website! <br></h1>';
+        // CHECK FOR ABSOLUTE PATH //
+        //$path = parse_url("http://localhost/educom-webshop-oop/css/stylesheet.css", PHP_URL_PATH);     
+        //echo $_SERVER['DOCUMENT_ROOT'] . $path;
     }
     
-    
-    // This function shows the navigation menu:
-    function showMenu() {
+    protected function showMenu() {
         echo '<ul class="navBar">' . PHP_EOL;
         foreach($this->data['menu'] as $link => $label) {
            $this->showMenuItem($link, $label);
@@ -22,22 +23,22 @@ class BasicDoc extends HtmlDoc {
         echo '</ul>';
     }
     
-    // This function shows the menu items
-    function showMenuItem($link, $label) {
+    protected function showMenuItem($link, $label) {
         echo '<li> ';
         echo '<a href="index.php?page=' . $link . '">' . $label . '</a>';
         echo '</li>';
     }
-    function showFooter(){
-        echo "
-        <br><br>
-        <br><br>
         
-        <footer> <!-- Creates the footer -->
-              <p> &copy; 2022, Emiley Kappar </p>
-                </footer>";
-    }
-
+        
+    protected function showFooter(){
+        echo '<br><br>
+        <br><br>
+            
+        <footer> 
+            <p> &copy; 2022, Emiley Kappar </p>
+        </footer>';
+        }
+   
     protected function showContent(){
         echo '<h2>Home pagina</h2>
         <hr>
@@ -50,12 +51,13 @@ class BasicDoc extends HtmlDoc {
     }
 
     protected function showTitle(){
-        echo '<title>Emiley\'s website</title>';
+        echo '<title>Emiley\'s website - '. $this->data["page"].'</title>';
     }
 
     protected function showCssLinks(){
-        echo '<link rel="stylesheet" href="../css\stylesheet.css">';
-    }
+        echo '<link rel="stylesheet" href="../css/stylesheet.css">';
+    } 
+    //C:/Bitnami/wampstack-8.1.5-0/apache2/htdocs/educom-webshop-oop/css/stylesheet.css
 
     protected function showHeadContent() {
         $this->showTitle();

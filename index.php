@@ -134,10 +134,63 @@ function processActions() {
 
 // Show the requested page 
 function showResponsePage($data) {
-    beginDocument(); // no $page included as it stays the same on every page!
-    showHeadSection();
-    ShowBodySection($data); // $page included, to show the body section of the right page.
-    endDocument();
+    switch ($data['page']) {
+        case "home" :
+            require_once("views/HomeDoc.php");
+            $view = new HomeDoc($data);
+            break;
+        
+        case "about" :
+            require_once("views/AboutDoc.php");
+            $view = new HomeAboutDoc($data);
+            break;
+            
+        case "contact" :
+            require_once("contact.php");
+            showContactForm($data);
+            break;
+            
+        case "thanks":
+            require_once("contact.php");
+            showContactThanks($data);
+            break;
+            
+        case "register" :
+            require_once("register.php");
+            showRegisterForm($data);
+            break;
+            
+        case "login" :
+            require_once("login.php");
+            showLoginForm($data);
+            break;
+            
+        case "logout" :
+            require_once("home.php");
+            doLogoutUser();
+            break;
+
+        case "webshop" :
+            require_once("webshop.php");
+            showWebshop($data);
+            break;
+        
+        case "product_details" :
+            require_once("product_details.php");
+            showProductDetails($data);
+            break;
+
+        case "shoppingcart" :
+            require_once("shoppingcart.php");
+            showCartContent();
+            break;
+            
+        case "other" :
+            require_once("other.php");
+            showOtherContent();
+            break;
+    }
+    $view-> show();
 };
 
 // If variables are set in $array and $key, return these variables otherwise return the default variable $default. 
