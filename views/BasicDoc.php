@@ -8,11 +8,9 @@ class BasicDoc extends HtmlDoc {
         $this->data = $data;
     }
 
+    // methods
     protected function showHeader() {
         echo ' <h1> Welkom op mijn website! <br></h1>';
-        // CHECK FOR ABSOLUTE PATH //
-        //$path = parse_url("http://localhost/educom-webshop-oop/css/stylesheet.css", PHP_URL_PATH);     
-        //echo $_SERVER['DOCUMENT_ROOT'] . $path;
     }
     
     protected function showMenu() {
@@ -55,10 +53,14 @@ class BasicDoc extends HtmlDoc {
     }
 
     protected function showCssLinks(){
-        echo '<link rel="stylesheet" href="../css/stylesheet.css">';
+        echo '<link rel="stylesheet" href="http://localhost/educom-webshop-oop/css/stylesheet.css">';
+        // echo '<link rel="stylesheet" href="../css/stylesheet.css">';
+        // CHECK FOR ABSOLUTE PATH //
+        // $path = parse_url("http://localhost/educom-webshop-oop/css/stylesheet.css", PHP_URL_PATH);     
+        // echo $_SERVER['DOCUMENT_ROOT'] . $path;
+        // C:/Bitnami/wampstack-8.1.5-0/apache2/htdocs/educom-webshop-oop/css/stylesheet.css
     } 
-    //C:/Bitnami/wampstack-8.1.5-0/apache2/htdocs/educom-webshop-oop/css/stylesheet.css
-
+    
     protected function showHeadContent() {
         $this->showTitle();
         $this->showCssLinks();

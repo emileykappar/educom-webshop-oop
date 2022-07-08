@@ -1,4 +1,3 @@
-
 #pageContainer{ /* The pageContainer makes sure to place content together with the same background-color, allignment, margin, etc */
   background-color: white;
   width:800px;
@@ -19,7 +18,10 @@ ul.navBar{ /* Changes style of the MENU from unordered list to navigation bar wi
 	list-style-type: none;
 	margin: 0;
 	padding:0;
-	
+}
+p.text{
+  	font-size: 12px;
+  	color: dimgrey;	
 }
 ul.navBar li{
 	display: inline;

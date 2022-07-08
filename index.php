@@ -199,7 +199,7 @@ function getArrayVar($array, $key, $default="") {
     return isset($array[$key]) ? $array[$key] : $default; // If variables are set in $array and $key, return these variables otherwise return the default variable $default. 
 };
 
-// 
+//
 
 function getPostVar($key, $default="") {
     return getArrayVar($_POST, $key, $default);

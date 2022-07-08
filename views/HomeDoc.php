@@ -7,13 +7,13 @@ class HomeDoc extends BasicDoc {
     }
     
     protected function showContent(){
-        echo '<h2>Home pagina</h2>
+        echo '
+        <h2>Home pagina</h2>
         <hr>
       
-        <p> <!-- Small welcoming text -->
+        <p class="text"> <!-- Small welcoming text -->
             Dit is mijn eerste website!<br>
             Kijk gerust rond door op de menu knoppen bovenaan de pagina te klikken.<br>
-        
         </p> ' ;
     }
 }

@@ -1,11 +1,8 @@
 <?php
 include_once("../views/BasicDoc.php");
 
-/// instance BasicDoc
-$data = array ( 'page' => 'basic', 'menu'=> array( 'test_home_doc.php'=>'Home ','test_about_doc.php'=>'About ','contact'=>'Contact ','webshop'=>'Webshop ') /* other fields */ );
-
+$data = array ( 'page' => 'basic', 'menu'=> array( 'home'=>'Home ','about'=>'About ','contact'=>'Contact ','webshop'=>'Webshop ') /* other fields */ );
 $view= new BasicDoc($data);
-
 $view->show();
 
 ?>
