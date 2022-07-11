@@ -1,10 +1,10 @@
 <?php
 include_once("../views/ContactDoc.php");
 
-$data = array ( 'page' => 'basic', 'menu'=> array( 'home'=>'Home ','about'=>'About ','contact'=>'Contact ','webshop'=>'Webshop ') /* other fields */ );
+$data = array ( 'page' => 'basic', 'menu'=> array( 'home'=>'Home ','about'=>'About ','contact'=>'Contact ','webshop'=>'Webshop '),
+'form' => array('gender','name','email','tel','communicatievoorkeur','message')/* other fields */ );
 
-$view= new ContactDoc($data, $_POST);
-$errors = $view->validateForm();
+$view= new ContactDoc($data);
 $view->show();
 
 ?>
