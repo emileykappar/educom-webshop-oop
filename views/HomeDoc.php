@@ -3,6 +3,7 @@ require_once "BasicDoc.php";
 class HomeDoc extends BasicDoc {
 
     public function __construct($data){
+        // this code passes on the data to the parent class
         parent::__construct($data);
     }
     
