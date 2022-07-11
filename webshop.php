@@ -9,7 +9,7 @@ function showWebshop($data) {
     echo '<h2>Webshop</h2>
     <hr>
       
-    <p> 
+    <p class="text"> 
         Welkom op de webshop!<br>
         Je kunt hier terecht voor leuke honden speeltjes en accesoires.<br>
         Heb je een vraag? Stel deze dan via het contactformulier! :) <br>

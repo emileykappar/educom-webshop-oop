@@ -136,33 +136,33 @@ function processActions() {
 function showResponsePage($data) {
     switch ($data['page']) {
         case "home" :
-            require_once("views/HomeDoc.php");
+            require_once("./views/HomeDoc.php");
             $view = new HomeDoc($data);
             break;
         
         case "about" :
-            require_once("views/AboutDoc.php");
-            $view = new HomeAboutDoc($data);
+            require_once("./views/AboutDoc.php");
+            $view = new AboutDoc($data);
             break;
             
         case "contact" :
-            require_once("contact.php");
-            showContactForm($data);
+            require_once("./views/ContactDoc.php");
+            $view = new ContactDoc($data);
             break;
             
         case "thanks":
-            require_once("contact.php");
-            showContactThanks($data);
+            require_once("./views/ContactDoc.php");
+            $view = new ContactDoc($data);
             break;
             
         case "register" :
-            require_once("register.php");
-            showRegisterForm($data);
+            require_once("./views/RegisterDoc.php");
+            $view = new RegisterDoc($data);
             break;
             
         case "login" :
-            require_once("login.php");
-            showLoginForm($data);
+            require_once("./views/LoginDoc.php");
+            $view = new LoginDoc($data);
             break;
             
         case "logout" :

@@ -12,6 +12,10 @@
 	text-align: center;
 	color: black;
   }
+  p.text{
+	font-size: 12px;
+	color: dimgrey;
+  }
   body{
 	background-color: white;
   }
@@ -50,7 +54,6 @@
   }
   input{ /* All text input has width of 400px; */
 	width: 400px;
-  
   }
   input[type=radio]{ /* Input type=radio is on auto-width */
 	width: auto;
