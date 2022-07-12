@@ -2,21 +2,32 @@
 require_once "../models/page_model_class.php";
 class PageController extends PageModel{
 
-    public function __construct($data){
-        parent::__construct($data);
-      }
+    // properties
+    protected $page;
 
-    public function showResponsePage($data) {
-        switch ($data['page']) {
+    // methods
+    public function __construct($page) {
+        $this->page = $page;
+    } 
+
+    public function showResponsePage($page) {
+        switch ($page) {
             case "home" :
                 $this->showHomeDoc();
                 break; 
             case "about" :
                 $this->showAboutDoc();
-                break;  
+                break;        
         }
         $view-> show();
     }
+    
+    public function handleRequest(){
+        $this->showResponsePage($page);
+    }
+
+    
 }
+
 
 ?>

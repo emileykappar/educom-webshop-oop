@@ -13,7 +13,7 @@ class AboutDoc extends BasicDoc {
     <p class="text">
       Mijn naam is Emiley en ik ben 23 jaar. <br>
       Ik woon in Dordrecht samen met mijn vriend Declan, en sinds kort ook met onze puppy Echo: <br><br>
-      <img src="./Images/Echo.jpg" height="200"> <br><br>
+      <img src="../Images/Echo.jpg" height="200"> <br><br>
 
       In oktober 2021 ben ik afgestudeerd en heb ik mijn bachelor ontvangen in International Tourism. <br>
       Deze studie vond ik niet heel uitdagend, en omdat ik interesse kreeg in programmeren en het maken van websites en applicaties ben ik me hier verder in gaan verdiepen. <br>
