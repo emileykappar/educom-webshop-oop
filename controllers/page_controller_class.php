@@ -1,18 +1,19 @@
 <?php 
-
+require_once "../models/page_model_class.php";
 class PageController extends PageModel{
 
-    function showResponsePage($data) {
+    public function __construct($data){
+        parent::__construct($data);
+      }
+
+    public function showResponsePage($data) {
         switch ($data['page']) {
             case "home" :
                 $this->showHomeDoc();
                 break; 
-            
-            case "login" :
-                require_once 'user_controller.php';
-                $userController = new UserController($this->model);
-                $userController->login();
-                break;
+            case "about" :
+                $this->showAboutDoc();
+                break;  
         }
         $view-> show();
     }
