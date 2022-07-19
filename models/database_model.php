@@ -8,7 +8,7 @@ class DatabaseModel{
 
 
     // Create connection
-    protected function connect(){
+    public function connect(){
         $conn = new mysqli($servername, $username, $password);
         if ($conn->connect_error){
             die("Connection has failed:" . $conn->$connect_error);
