@@ -1,12 +1,12 @@
 <?php 
-require_once "../models/page_model_class.php";
+require_once "models/page_model_class.php";
 class PageController {
 
     // properties
     private $model;
 
     // methods
-    public function __construct() {
+    public function __construct(){
         $this->model = new PageModel(NULL);
     } 
 
@@ -16,7 +16,7 @@ class PageController {
         $this->showResponsePage();
     }
 
-    private getRequest() { 
+    private function getRequest(){ 
         $this->model->getRequestedPage(); // from the page model class
     }
 
