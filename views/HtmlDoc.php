@@ -1,6 +1,6 @@
 <?php 
-
-class HtmlDoc {
+require_once "../controllers/page_controller_class.php";
+class HtmlDoc extends PageController {
 
     private function beginDocument() {
         echo '<!DOCTYPE html> 
@@ -30,6 +30,7 @@ class HtmlDoc {
     protected function endDocument() {
         echo '</html>';
     }
+    
     // methods
     public function show(){
         $this->beginDocument();

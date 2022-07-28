@@ -3,8 +3,8 @@
 require_once "BasicDoc.php";
 class AboutDoc extends BasicDoc {
 
-  public function __construct($data){
-    parent::__construct($data);
+  public function __construct($model){
+    parent::__construct($model);
   }
 
   protected function showContent(){

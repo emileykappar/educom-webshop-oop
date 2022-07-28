@@ -1,5 +1,5 @@
 <?php 
-require_once "models/page_model_class.php";
+require_once "../models/page_model_class.php";
 class PageController {
 
     // properties
@@ -20,31 +20,29 @@ class PageController {
         $this->model->getRequestedPage(); // from the page model class
     }
 
-    ///// dit hoeft nog niet voor 4.2b /////
-    //private validateRequest() {
-    //    switch ($this->model->page) {
-    //        case "Login":
-    //            $this->model = new UserModel;
-    //            if ($model->checkLogin()) {
-    //                $this->model->doLoginUser();
-    //                $this->model->setPage("home");
-    //            }
-    //            break;
-    //
-    //
-    //    }
-    //}
+    private function validateRequest() {
+        switch ($this->model->page) {
+            case "Login":
+                $this->model = new UserModel;
+                if ($model->checkLogin()) {
+                    $this->model->doLoginUser();
+                    $this->model->setPage("home");
+                }
+                break;
+        }
+    }
 
     public function showResponsePage() {
+        var_dump($this->model);
         $this->model->createMenu();
 
         switch ($this->model->page) {
             case "Home" :
-                require_once "../HomeDoc.php";
+                require_once "../views/HomeDoc.php";
                 $view = new HomeDoc($this->model);
                 break; 
             case "About" :
-                require_once "../AboutDoc.php";
+                require_once "../views/AboutDoc.php";
                 $view = new AboutDoc($this->model);
                 break;        
         }
